@@ -34,7 +34,7 @@ public class CompanyController {
             loadCompanyDetails();
         }
         System.out.println("company to look for is " + companyName);
-        companyName = companyName.toLowerCase();
+        companyName = companyName.toLowerCase().replaceAll("&","and");
         if(companyMap.containsKey(companyName)){
             return companyMap.get(companyName);
         } else {
@@ -61,9 +61,9 @@ public class CompanyController {
         if (null != wrapper) {
             wrapper.getResult().forEach(company -> {
                 System.out.println(" setting company details");
-                company.setCompanyName(company.getCompanyName().toLowerCase());
+                company.setCompanyName(company.getCompanyName().toLowerCase().replaceAll("&","and"));
                 if (null != company.getCompanyPopularName()) {
-                    company.setCompanyPopularName(company.getCompanyPopularName().toLowerCase());
+                    company.setCompanyPopularName(company.getCompanyPopularName().toLowerCase().replaceAll("&","and"));
                 }
                 if (null != company.getBrandName()){
                     company.setBrandName(company.getBrandName().toLowerCase());

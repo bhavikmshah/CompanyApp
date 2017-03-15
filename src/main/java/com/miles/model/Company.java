@@ -14,6 +14,8 @@ public class Company {
     private String securitySymbol;
     private String brandName;
     private String brandCode;
+    private String giftItemCode;
+
 
     private Quote quote;
 
@@ -71,6 +73,14 @@ public class Company {
 
     public void setQuote(Quote quote) {
         this.quote = quote;
+    }
+
+    public String getGiftItemCode() {
+        return giftItemCode;
+    }
+
+    public void setGiftItemCode(String giftItemCode) {
+        this.giftItemCode = giftItemCode;
     }
 }
 

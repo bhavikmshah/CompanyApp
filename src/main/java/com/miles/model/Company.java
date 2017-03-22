@@ -15,6 +15,7 @@ public class Company {
     private String brandName;
     private String brandCode;
     private String giftItemCode;
+    private String giftItemType;
 
 
     private Quote quote;
@@ -81,6 +82,14 @@ public class Company {
 
     public void setGiftItemCode(String giftItemCode) {
         this.giftItemCode = giftItemCode;
+    }
+
+    public String getGiftItemType() {
+        return giftItemType;
+    }
+
+    public void setGiftItemType(String giftItemType) {
+        this.giftItemType = giftItemType;
     }
 }
 

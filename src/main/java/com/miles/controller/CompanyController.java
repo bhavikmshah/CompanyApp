@@ -61,14 +61,16 @@ public class CompanyController {
         if (null != wrapper) {
             wrapper.getResult().forEach(company -> {
                 System.out.println(" setting company details");
-                company.setCompanyName(company.getCompanyName().toLowerCase().replaceAll("&","and"));
-                if (null != company.getCompanyPopularName()) {
-                    company.setCompanyPopularName(company.getCompanyPopularName().toLowerCase().replaceAll("&","and"));
+                if("SECURITY".equals(company.getGiftItemType())) {
+                    company.setCompanyName(company.getCompanyName().toLowerCase().replaceAll("&", "and"));
+                    if (null != company.getCompanyPopularName()) {
+                        company.setCompanyPopularName(company.getCompanyPopularName().toLowerCase().replaceAll("&", "and"));
+                    }
+                    if (null != company.getBrandName()) {
+                        company.setBrandName(company.getBrandName().toLowerCase());
+                    }
+                    companyMap.put(company.getCompanyName().toLowerCase(), company);
                 }
-                if (null != company.getBrandName()){
-                    company.setBrandName(company.getBrandName().toLowerCase());
-                }
-                companyMap.put(company.getCompanyName().toLowerCase(), company);
             });
         }
     }
